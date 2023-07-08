@@ -2,7 +2,6 @@
 #include <ESP8266Wifi.h>
 #include <ESPAsyncTCP.h>
 #include <ESPAsyncWebServer.h>
-#include <AsyncElegantOTA.h>
 #include "feeder.h"
 
 //Wifi parameters
@@ -32,9 +31,6 @@ void setup() {
   Serial.println();
   Serial.print("Connected, IP address: ");
   Serial.println(WiFi.localIP());  
-
-  //Set up for OTA updates web interface
-  AsyncElegantOTA.begin(&server);
 
   //Initialize the feeder and feeder web interface
   petFeeder.begin(&server);
