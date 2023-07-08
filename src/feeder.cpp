@@ -252,7 +252,7 @@ void Feeder::getMainPage(AsyncWebServerRequest *request) {
     response->print("<button onclick=\"window.location.href = 'cancel';\">Cancel Feeding</button>");
   }
   
-  response->print("<button onclick=\"window.location.href = 'update';\">Firmware Update</button>");
+  //response->print("<button onclick=\"window.location.href = 'update';\">Firmware Update</button>");
   
   response->print("<br><br><p><h2>Parameter Update</h2><br><form action=\"updateparams\" method=\"post\">");
   response->print("<label for=\"forward\">Forward time:</label>");
