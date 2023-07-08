@@ -9,7 +9,7 @@ This project creates a PetFeeder class to control a servo-driven auger on a pet 
 [ESP_EEPROM](https://github.com/jwrw/ESP_EEPROM) @jwrw
 
 ## Usage
-Instantiate a Feeder object. In `setup()`, call `Feeder.begin()` with a pointer to an `AsyncWebServer` object. Then in `loop()`, call `feeder.checkFeeding()`.
+Instantiate a Feeder object. In `setup()`, call `Feeder.begin()` with a pointer to an `AsyncWebServer` object. Then in `loop()`, call `feeder.checkFeeding()`.  The servo should be on GPIO2 (this is currently not configurable). 
 ```
 #include <ESPAsyncWebServer.h>
 #include <feeder.h>
