@@ -29,11 +29,11 @@ void loop() {
 ## Function
 
 The landing page allows you to initiate or cancel a feeding cycle as well as update the feeding cycle parameters. A feeding cycle is executed as follows:
-        1. Servo turns "forward" for the configured amount of forward time
-        2. Servo pauses for the configured pause time
-        3. Servo goes backwards for the configured amount of backwards time (this is to clear any jams)
-        4. Servo pauses for the configured amount of rest time
-        5. Repeat steps 1-4 for the configured number of iterations
+1. Servo turns "forward" for the configured amount of forward time
+2. Servo pauses for the configured pause time
+3. Servo goes backwards for the configured amount of backwards time (this is to clear any jams)
+4. Servo pauses for the configured amount of rest time
+5. Repeat steps 1-4 for the configured number of iterations
 
 You can initiate a feeding cycle by accessing `http://ip_address/feed`, or cancel a feeding cycle by accessing `http://ip_address/cancel`.
 
