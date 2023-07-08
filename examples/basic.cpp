@@ -10,7 +10,7 @@ const char* ssid = "SSID";
 const char* password = "PASSWORD";
 
 AsyncWebServer server(80);  // create the web server
-Feeder pigFeeder;  // create the feeder
+Feeder petFeeder;  // create the feeder
 
 void setup() {
   // Set to 74880 to match the ESP8266 boot baud rate
@@ -37,13 +37,13 @@ void setup() {
   AsyncElegantOTA.begin(&server);
 
   //Initialize the feeder and feeder web interface
-  pigFeeder.begin(&server);
+  petFeeder.begin(&server);
 
   server.begin();
 }
 
 void loop() {
   //Check for async timer events to move the feeding state machine
-  pigFeeder.checkFeeding();
+  petFeeder.checkFeeding();
 }
 
