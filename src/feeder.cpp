@@ -237,12 +237,12 @@ int Feeder::paramsCheck(feedParameters params) {
 */
 void Feeder::getMainPage(AsyncWebServerRequest *request) {
   AsyncResponseStream * response = request->beginResponseStream("text/html");
-  response->print("<!DOCTYPE html><html><head><title>Pig Feeder</title>");
+  response->print("<!DOCTYPE html><html><head><title>Pet Feeder</title>");
   if (state != idle) {
     response->print("<meta http-equiv=\"refresh\" content=\"1\" />");
   }
   response->print("</head><body>");
-  response->print("<h1>Pig Feader</h1>");
+  response->print("<h1>Pet Feader</h1>");
   response->print("<p>Status: ");
   if (state == idle) {
     response->print("Idle</p>");
