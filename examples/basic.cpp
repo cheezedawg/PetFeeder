@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include <ESP8266Wifi.h>
+#include <ESP8266WiFi.h>
 #include <ESPAsyncTCP.h>
 #include <ESPAsyncWebServer.h>
 #include "feeder.h"

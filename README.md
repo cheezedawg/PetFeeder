@@ -9,7 +9,7 @@ This project creates a PetFeeder class to control a servo-driven auger on a pet 
 [ESP_EEPROM](https://github.com/jwrw/ESP_EEPROM) @jwrw
 
 ## Usage
-Instantiate a Feeder object. In `setup()`, call `Feeder.begin()` with a pointer to an `AsyncWebServer` object. Then in `loop()`, call `feeder.checkFeeding()`.  The servo should be on GPIO2 (this is currently not configurable). 
+Instantiate a Feeder object. In `setup()`, call `Feeder.begin()` with a pointer to an `AsyncWebServer` object. Then in `loop()`, call `feeder.checkFeeding()`. `begin()` attaches the servo and loads saved parameters, so that work runs from `setup()` rather than from a global constructor. The servo signal is GPIO4, defined by `SERVO_GPIO` in `src/feeder.h`. 
 ```
 #include <ESPAsyncWebServer.h>
 #include <feeder.h>
@@ -36,6 +36,8 @@ The landing page allows you to initiate or cancel a feeding cycle as well as upd
 5. Repeat steps 1-4 for the configured number of iterations
 
 You can initiate a feeding cycle by accessing `http://ip_address/feed`, or cancel a feeding cycle by accessing `http://ip_address/cancel`.
+
+Phase times must be from 1 to 120000 milliseconds, and iterations from 1 to 30. Anything outside that range is rejected and not written to EEPROM. A cycle keeps the times it started with; saved changes apply to the next cycle. The rest step runs on every iteration, including the last one.
 
 ## Needed Supplies
 You will need a Continuous Rotation servo, such as:
