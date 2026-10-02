@@ -1,6 +1,6 @@
 # PetFeeder
 
-This project creates a PetFeeder class to control a servo-driven auger on a pet feeder.  It makes use of the ESP AsyncWebServer and NoDelay libraries for non-blocking calls, and the configurable feed parameters are stored in EEPROM using the ESP_EEPROM library. The web interface is ugly and utilitarian because I control this with home automation and I'm not good at web design.
+This project creates a PetFeeder class to control a servo-driven auger on a pet feeder.  It makes use of the ESP AsyncWebServer and NoDelay libraries for non-blocking calls, and the configurable feed parameters are stored in EEPROM using the ESP_EEPROM library. The web interface is a small self-contained page served by the device, so it does not need internet access on your LAN. Home automation can still start a cycle at `/feed` or cancel one at `/cancel`.
 
 [ESP AsyncWebServer](https://github.com/esphome/ESPAsyncWebServer) @me-no-dev
 
